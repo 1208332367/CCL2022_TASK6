@@ -14,7 +14,7 @@ class Model(nn.Module):
         self.lin = nn.Linear(hidden_states, output_states)
 
     def forward(self, sentences):
-        # [batch_size, sentences_seqs, sequence_max_lens]
+        # [batch_size, sentences_seqs, sequence_lens]
         tokens = self.tokenizer(sentences, padding=True, return_tensors='pt')
         input_ids, token_type_ids, attention_mask = tokens['input_ids'], tokens['token_type_ids'], tokens['attention_mask']
         # print(input_ids, token_type_ids, attention_mask)
