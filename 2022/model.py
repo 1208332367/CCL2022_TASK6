@@ -1,3 +1,4 @@
+import torch
 import torch.nn as nn
 from transformers import AutoModel
 from transformers import AutoTokenizer
@@ -17,8 +18,8 @@ class Model(nn.Module):
         # self.cross_attention = torch.nn.MultiheadAttention(embed_dim=attention_states, num_heads=num_heads,
         #                                                    dropout=dropout)
         self.lin = nn.Linear(self.config.hidden_size, hidden_states)
-        self.event_start_lin = nn.Linear(hidden_states, output_states)
-        self.event_end_lin = nn.Linear(hidden_states, output_states)
+        self.event_start_lin = nn.Linear(1, output_states)
+        self.event_end_lin = nn.Linear(1, output_states)
 
     def forward(self, descriptor, sentences):
         #  [(batch_size), (batch_size), ... , len(sentences)-1 ] ->  [batch_size * len(sentences)]
@@ -58,14 +59,16 @@ class Model(nn.Module):
         descriptor_encode = descriptor_encode.unsqueeze(1)
         # [batch_size, 1, 768]
         descriptor_encode = self.lin(descriptor_encode)
-        sentences_encode = sentences_encode + descriptor_encode
+        # [batch_size, 1, hidden_states]
+        sentences_encode = torch.bmm(sentences_encode, descriptor_encode.transpose(1, 2))
+        # [batch_size, sentences_seqs(38), 1]
 
         # cross-attention
         # attn_output, attn_output_weights = self.cross_attention(gru_output, descriptor_encode, descriptor_encode)
         # [batch_size, sentences_seqs(38), attention_states]
 
-        start = self.event_start_lin(sentences_encode).relu()
-        # [batch_size, sentences_seqs(38), 1]
-        end = self.event_end_lin(sentences_encode).relu()
-        # [batch_size, sentences_seqs(38), 1]
+        start = self.event_start_lin(sentences_encode).sigmoid()
+        # [batch_size, sentences_seqs(38), output_states]
+        end = self.event_end_lin(sentences_encode).sigmoid()
+        # [batch_size, sentences_seqs(38), output_states]
         return start, end
