@@ -19,8 +19,8 @@ class Model(nn.Module):
         #                                                    dropout=dropout)
         self.lin1 = nn.Linear(self.config.hidden_size, hidden_states)
         self.lin2 = nn.Linear(self.config.hidden_size, hidden_states)
-        # self.event_start_lin = nn.Linear(1, output_states)
-        # self.event_end_lin = nn.Linear(1, output_states)
+        self.event_start_lin = nn.Linear(1, output_states)
+        self.event_end_lin = nn.Linear(1, output_states)
 
     def forward(self, descriptor, sentences):
         #  [(batch_size), (batch_size), ... , len(sentences)-1 ] ->  [batch_size * len(sentences)]
@@ -70,8 +70,8 @@ class Model(nn.Module):
         # attn_output, attn_output_weights = self.cross_attention(gru_output, descriptor_encode, descriptor_encode)
         # [batch_size, sentences_seqs(38), attention_states]
 
-        start = sentences_encode_start.sigmoid()
+        start = self.event_start_lin(sentences_encode_start).sigmoid()
         # [batch_size, sentences_seqs(38), output_states]
-        end = sentences_encode_end.sigmoid()
+        end = self.event_end_lin(sentences_encode_end).sigmoid()
         # [batch_size, sentences_seqs(38), output_states]
         return start, end
