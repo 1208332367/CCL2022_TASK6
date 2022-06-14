@@ -6,8 +6,8 @@ from transformers import AutoConfig
 
 
 class Model(nn.Module):
-    def __init__(self, hidden_states, output_states, num_layers,
-                 dropout, bidirectional, sentence_max_length=512, descriptor_max_length=20):
+    def __init__(self, hidden_states, num_layers, dropout, bidirectional,
+                 sentence_max_length=512, descriptor_max_length=20):
         super().__init__()
         self.sentence_max_length = sentence_max_length
         self.descriptor_max_length = descriptor_max_length
@@ -19,10 +19,11 @@ class Model(nn.Module):
         #                                                    dropout=dropout)
         self.lin1 = nn.Linear(self.config.hidden_size, hidden_states)
         self.lin2 = nn.Linear(self.config.hidden_size, hidden_states)
-        self.event_start_lin = nn.Linear(1, output_states)
-        self.event_end_lin = nn.Linear(1, output_states)
+        self.dropout = nn.Dropout(dropout)
+        # self.event_start_lin = nn.Linear(1, output_states)
+        # self.event_end_lin = nn.Linear(1, output_states)
 
-    def forward(self, descriptor, sentences):
+    def forward(self, descriptor, sentences, device):
         #  [(batch_size), (batch_size), ... , len(sentences)-1 ] ->  [batch_size * len(sentences)]
         batch_size = len(sentences[0])
         sentences_tokens = self.tokenizer([e for t in sentences for e in t],
@@ -30,6 +31,7 @@ class Model(nn.Module):
                                           max_length=self.sentence_max_length,
                                           padding='max_length',
                                           return_tensors='pt')
+        sentences_tokens.to(device)
         # [batch_size * sentences_seqs(38),  sentence_max_length]
         sentences_input_ids = sentences_tokens['input_ids']
         sentences_token_type_ids = sentences_tokens['token_type_ids']
@@ -51,6 +53,7 @@ class Model(nn.Module):
                                            max_length=self.descriptor_max_length,
                                            padding='max_length',
                                            return_tensors='pt')
+        descriptor_tokens.to(device)
         # [batch_size,  descriptor_max_length]
         descriptor_input_ids = descriptor_tokens['input_ids']
         descriptor_token_type_ids = descriptor_tokens['token_type_ids']
@@ -59,9 +62,11 @@ class Model(nn.Module):
                                     descriptor_attention_mask).pooler_output
         descriptor_encode = descriptor_encode.unsqueeze(1)
         # [batch_size, 1, 768]
-        descriptor_encode_start = self.lin1(descriptor_encode)
-        descriptor_encode_end = self.lin2(descriptor_encode)
+
+        descriptor_encode_start = self.dropout(self.lin1(descriptor_encode))
+        descriptor_encode_end = self.dropout(self.lin2(descriptor_encode))
         # [batch_size, 1, hidden_states]
+
         sentences_encode_start = torch.bmm(sentences_encode, descriptor_encode_start.transpose(1, 2))
         sentences_encode_end = torch.bmm(sentences_encode, descriptor_encode_end.transpose(1, 2))
         # [batch_size, sentences_seqs(38), 1]
@@ -70,8 +75,8 @@ class Model(nn.Module):
         # attn_output, attn_output_weights = self.cross_attention(gru_output, descriptor_encode, descriptor_encode)
         # [batch_size, sentences_seqs(38), attention_states]
 
-        start = self.event_start_lin(sentences_encode_start).sigmoid()
+        start = sentences_encode_start.sigmoid()
         # [batch_size, sentences_seqs(38), output_states]
-        end = self.event_end_lin(sentences_encode_end).sigmoid()
+        end = sentences_encode_end.sigmoid()
         # [batch_size, sentences_seqs(38), output_states]
         return start, end
