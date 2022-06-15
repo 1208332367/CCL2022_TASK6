@@ -46,16 +46,3 @@ def train_dev(doc_file, ann_file, max_seq_lens):
             end_anns.append(end_ann)
     return descriptors, contents, start_anns, end_anns, valid_lens
 
-
-descriptors, contents, start_anns, end_anns, valid_lens = train_dev("./ECOM2022/data/train.doc.json", "./ECOM2022/data/train.ann.json", 38)
-
-
-def example(i):
-    print(descriptors[i])
-    print(contents[i])
-    print(start_anns[i].shape)
-    print(end_anns[i])
-    print(valid_lens[i])
-
-
-# example(1)
