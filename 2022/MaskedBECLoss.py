@@ -17,6 +17,6 @@ def MaskBECLoss(pred, label, valid_len):
     weights = torch.ones_like(label)
     weights = sequence_mask(weights, valid_len)
     unweighted_loss = loss(pred, label)
-    weighted_loss = (unweighted_loss * weights).sum()
+    weighted_loss = (unweighted_loss * weights).mean()
     return weighted_loss
 
