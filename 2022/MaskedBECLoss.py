@@ -20,3 +20,8 @@ def MaskBECLoss(pred, label, valid_len):
     weighted_loss = (unweighted_loss * weights).mean()
     return weighted_loss
 
+
+def toOnehot(matric, threshold):
+    matric[matric > threshold] = 1
+    matric[matric < threshold] = 0
+    return matric

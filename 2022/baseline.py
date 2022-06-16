@@ -4,7 +4,7 @@ from dataset import ECOMDatasets
 from torch.utils.data import DataLoader
 from model import Model
 import torch
-from MaskedBECLoss import MaskBECLoss
+from MaskedBECLoss import MaskBECLoss, toOnehot
 
 datasets = ECOMDatasets("./ECOM2022/data/train.doc.json", "./ECOM2022/data/train.ann.json")
 dev_datasets = ECOMDatasets("./ECOM2022/data/dev.doc.json", "./ECOM2022/data/dev.ann.json")
@@ -39,6 +39,7 @@ model.to(device)
 
 num_epochs = 10
 lr = 0.05
+threshold = 0.8
 # optimizer = torch.optim.Adam(filter(lambda p: p.requires_grad, model.parameters()), lr=lr)
 optimizer = torch.optim.Adam(model.parameters(), lr=lr)
 fout = open('log.out', 'w', encoding='utf-8')
@@ -65,8 +66,10 @@ for epoch in range(num_epochs):
         end_anns = end_anns.to(device).type(torch.float32)
         with torch.no_grad():
             start, end = model(descriptors, contents, device)
-        start_dev = [i[:v].equal(j[:v]) for i, j, v in zip(start.squeeze(-1), start_anns, valid_lens)]
-        end_dev = [i[:v].equal(j[:v]) for i, j, v in zip(end.squeeze(-1), end_anns, valid_lens)]
+        start = toOnehot(start.squeeze(-1), threshold)
+        end = toOnehot(end.squeeze(-1), threshold)
+        start_dev = [i[:v].equal(j[:v]) for i, j, v in zip(start, start_anns, valid_lens)]
+        end_dev = [i[:v].equal(j[:v]) for i, j, v in zip(end, end_anns, valid_lens)]
         static = [i & j for i, j in zip(start_dev, end_dev)]
         total += len(static)
         acc += torch.tensor(numpy.array(static)).sum()
