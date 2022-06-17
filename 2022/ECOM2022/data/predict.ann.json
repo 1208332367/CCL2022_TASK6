@@ -1,0 +1,541 @@
+[
+ {
+  "event_id": 40,
+  "doc_id": 134,
+  "start_sent_idx": 0,
+  "end_sent_idx": 1,
+  "argument": ""
+ },
+ {
+  "event_id": 40,
+  "doc_id": 134,
+  "start_sent_idx": 2,
+  "end_sent_idx": 3,
+  "argument": ""
+ },
+ {
+  "event_id": 40,
+  "doc_id": 134,
+  "start_sent_idx": 4,
+  "end_sent_idx": 5,
+  "argument": ""
+ },
+ {
+  "event_id": 40,
+  "doc_id": 134,
+  "start_sent_idx": 6,
+  "end_sent_idx": 7,
+  "argument": ""
+ },
+ {
+  "event_id": 40,
+  "doc_id": 134,
+  "start_sent_idx": 8,
+  "end_sent_idx": 9,
+  "argument": ""
+ },
+ {
+  "event_id": 40,
+  "doc_id": 134,
+  "start_sent_idx": 10,
+  "end_sent_idx": 26,
+  "argument": ""
+ },
+ {
+  "event_id": 144,
+  "doc_id": 482,
+  "start_sent_idx": 0,
+  "end_sent_idx": 0,
+  "argument": ""
+ },
+ {
+  "event_id": 144,
+  "doc_id": 482,
+  "start_sent_idx": 1,
+  "end_sent_idx": 6,
+  "argument": ""
+ },
+ {
+  "event_id": 165,
+  "doc_id": 543,
+  "start_sent_idx": 0,
+  "end_sent_idx": 1,
+  "argument": ""
+ },
+ {
+  "event_id": 165,
+  "doc_id": 543,
+  "start_sent_idx": 2,
+  "end_sent_idx": 3,
+  "argument": ""
+ },
+ {
+  "event_id": 165,
+  "doc_id": 543,
+  "start_sent_idx": 4,
+  "end_sent_idx": 5,
+  "argument": ""
+ },
+ {
+  "event_id": 165,
+  "doc_id": 543,
+  "start_sent_idx": 6,
+  "end_sent_idx": 7,
+  "argument": ""
+ },
+ {
+  "event_id": 165,
+  "doc_id": 543,
+  "start_sent_idx": 8,
+  "end_sent_idx": 9,
+  "argument": ""
+ },
+ {
+  "event_id": 165,
+  "doc_id": 543,
+  "start_sent_idx": 10,
+  "end_sent_idx": 11,
+  "argument": ""
+ },
+ {
+  "event_id": 165,
+  "doc_id": 543,
+  "start_sent_idx": 12,
+  "end_sent_idx": 13,
+  "argument": ""
+ },
+ {
+  "event_id": 165,
+  "doc_id": 543,
+  "start_sent_idx": 14,
+  "end_sent_idx": 15,
+  "argument": ""
+ },
+ {
+  "event_id": 288,
+  "doc_id": 974,
+  "start_sent_idx": 0,
+  "end_sent_idx": 1,
+  "argument": ""
+ },
+ {
+  "event_id": 288,
+  "doc_id": 974,
+  "start_sent_idx": 2,
+  "end_sent_idx": 3,
+  "argument": ""
+ },
+ {
+  "event_id": 288,
+  "doc_id": 974,
+  "start_sent_idx": 4,
+  "end_sent_idx": 5,
+  "argument": ""
+ },
+ {
+  "event_id": 288,
+  "doc_id": 974,
+  "start_sent_idx": 6,
+  "end_sent_idx": 7,
+  "argument": ""
+ },
+ {
+  "event_id": 288,
+  "doc_id": 974,
+  "start_sent_idx": 8,
+  "end_sent_idx": 9,
+  "argument": ""
+ },
+ {
+  "event_id": 288,
+  "doc_id": 974,
+  "start_sent_idx": 10,
+  "end_sent_idx": 11,
+  "argument": ""
+ },
+ {
+  "event_id": 288,
+  "doc_id": 974,
+  "start_sent_idx": 12,
+  "end_sent_idx": 13,
+  "argument": ""
+ },
+ {
+  "event_id": 288,
+  "doc_id": 974,
+  "start_sent_idx": 14,
+  "end_sent_idx": 15,
+  "argument": ""
+ },
+ {
+  "event_id": 296,
+  "doc_id": 993,
+  "start_sent_idx": 0,
+  "end_sent_idx": 1,
+  "argument": ""
+ },
+ {
+  "event_id": 296,
+  "doc_id": 993,
+  "start_sent_idx": 2,
+  "end_sent_idx": 29,
+  "argument": ""
+ },
+ {
+  "event_id": 371,
+  "doc_id": 1262,
+  "start_sent_idx": 0,
+  "end_sent_idx": 0,
+  "argument": ""
+ },
+ {
+  "event_id": 371,
+  "doc_id": 1262,
+  "start_sent_idx": 1,
+  "end_sent_idx": 1,
+  "argument": ""
+ },
+ {
+  "event_id": 371,
+  "doc_id": 1262,
+  "start_sent_idx": 2,
+  "end_sent_idx": 2,
+  "argument": ""
+ },
+ {
+  "event_id": 371,
+  "doc_id": 1262,
+  "start_sent_idx": 3,
+  "end_sent_idx": 3,
+  "argument": ""
+ },
+ {
+  "event_id": 371,
+  "doc_id": 1262,
+  "start_sent_idx": 4,
+  "end_sent_idx": 4,
+  "argument": ""
+ },
+ {
+  "event_id": 371,
+  "doc_id": 1262,
+  "start_sent_idx": 5,
+  "end_sent_idx": 5,
+  "argument": ""
+ },
+ {
+  "event_id": 371,
+  "doc_id": 1262,
+  "start_sent_idx": 6,
+  "end_sent_idx": 6,
+  "argument": ""
+ },
+ {
+  "event_id": 371,
+  "doc_id": 1262,
+  "start_sent_idx": 7,
+  "end_sent_idx": 7,
+  "argument": ""
+ },
+ {
+  "event_id": 371,
+  "doc_id": 1262,
+  "start_sent_idx": 8,
+  "end_sent_idx": 8,
+  "argument": ""
+ },
+ {
+  "event_id": 371,
+  "doc_id": 1262,
+  "start_sent_idx": 9,
+  "end_sent_idx": 9,
+  "argument": ""
+ },
+ {
+  "event_id": 371,
+  "doc_id": 1262,
+  "start_sent_idx": 10,
+  "end_sent_idx": 10,
+  "argument": ""
+ },
+ {
+  "event_id": 371,
+  "doc_id": 1262,
+  "start_sent_idx": 11,
+  "end_sent_idx": 11,
+  "argument": ""
+ },
+ {
+  "event_id": 371,
+  "doc_id": 1262,
+  "start_sent_idx": 12,
+  "end_sent_idx": 12,
+  "argument": ""
+ },
+ {
+  "event_id": 371,
+  "doc_id": 1262,
+  "start_sent_idx": 13,
+  "end_sent_idx": 13,
+  "argument": ""
+ },
+ {
+  "event_id": 371,
+  "doc_id": 1262,
+  "start_sent_idx": 14,
+  "end_sent_idx": 14,
+  "argument": ""
+ },
+ {
+  "event_id": 371,
+  "doc_id": 1262,
+  "start_sent_idx": 15,
+  "end_sent_idx": 15,
+  "argument": ""
+ },
+ {
+  "event_id": 371,
+  "doc_id": 1262,
+  "start_sent_idx": 16,
+  "end_sent_idx": 16,
+  "argument": ""
+ },
+ {
+  "event_id": 371,
+  "doc_id": 1262,
+  "start_sent_idx": 17,
+  "end_sent_idx": 17,
+  "argument": ""
+ },
+ {
+  "event_id": 371,
+  "doc_id": 1262,
+  "start_sent_idx": 18,
+  "end_sent_idx": 18,
+  "argument": ""
+ },
+ {
+  "event_id": 371,
+  "doc_id": 1262,
+  "start_sent_idx": 19,
+  "end_sent_idx": 19,
+  "argument": ""
+ },
+ {
+  "event_id": 371,
+  "doc_id": 1262,
+  "start_sent_idx": 20,
+  "end_sent_idx": 20,
+  "argument": ""
+ },
+ {
+  "event_id": 371,
+  "doc_id": 1262,
+  "start_sent_idx": 21,
+  "end_sent_idx": 21,
+  "argument": ""
+ },
+ {
+  "event_id": 371,
+  "doc_id": 1262,
+  "start_sent_idx": 22,
+  "end_sent_idx": 22,
+  "argument": ""
+ },
+ {
+  "event_id": 371,
+  "doc_id": 1262,
+  "start_sent_idx": 23,
+  "end_sent_idx": 23,
+  "argument": ""
+ },
+ {
+  "event_id": 371,
+  "doc_id": 1262,
+  "start_sent_idx": 24,
+  "end_sent_idx": 24,
+  "argument": ""
+ },
+ {
+  "event_id": 371,
+  "doc_id": 1262,
+  "start_sent_idx": 25,
+  "end_sent_idx": 25,
+  "argument": ""
+ },
+ {
+  "event_id": 371,
+  "doc_id": 1262,
+  "start_sent_idx": 26,
+  "end_sent_idx": 26,
+  "argument": ""
+ },
+ {
+  "event_id": 371,
+  "doc_id": 1262,
+  "start_sent_idx": 27,
+  "end_sent_idx": 27,
+  "argument": ""
+ },
+ {
+  "event_id": 371,
+  "doc_id": 1262,
+  "start_sent_idx": 28,
+  "end_sent_idx": 28,
+  "argument": ""
+ },
+ {
+  "event_id": 371,
+  "doc_id": 1262,
+  "start_sent_idx": 29,
+  "end_sent_idx": 29,
+  "argument": ""
+ },
+ {
+  "event_id": 371,
+  "doc_id": 1262,
+  "start_sent_idx": 30,
+  "end_sent_idx": 30,
+  "argument": ""
+ },
+ {
+  "event_id": 382,
+  "doc_id": 1290,
+  "start_sent_idx": 0,
+  "end_sent_idx": 1,
+  "argument": ""
+ },
+ {
+  "event_id": 382,
+  "doc_id": 1290,
+  "start_sent_idx": 2,
+  "end_sent_idx": 3,
+  "argument": ""
+ },
+ {
+  "event_id": 382,
+  "doc_id": 1290,
+  "start_sent_idx": 4,
+  "end_sent_idx": 5,
+  "argument": ""
+ },
+ {
+  "event_id": 382,
+  "doc_id": 1290,
+  "start_sent_idx": 6,
+  "end_sent_idx": 22,
+  "argument": ""
+ },
+ {
+  "event_id": 433,
+  "doc_id": 1471,
+  "start_sent_idx": 0,
+  "end_sent_idx": 0,
+  "argument": ""
+ },
+ {
+  "event_id": 433,
+  "doc_id": 1471,
+  "start_sent_idx": 1,
+  "end_sent_idx": 1,
+  "argument": ""
+ },
+ {
+  "event_id": 433,
+  "doc_id": 1471,
+  "start_sent_idx": 2,
+  "end_sent_idx": 2,
+  "argument": ""
+ },
+ {
+  "event_id": 433,
+  "doc_id": 1471,
+  "start_sent_idx": 3,
+  "end_sent_idx": 3,
+  "argument": ""
+ },
+ {
+  "event_id": 433,
+  "doc_id": 1471,
+  "start_sent_idx": 4,
+  "end_sent_idx": 4,
+  "argument": ""
+ },
+ {
+  "event_id": 433,
+  "doc_id": 1471,
+  "start_sent_idx": 5,
+  "end_sent_idx": 5,
+  "argument": ""
+ },
+ {
+  "event_id": 470,
+  "doc_id": 1611,
+  "start_sent_idx": 0,
+  "end_sent_idx": 0,
+  "argument": ""
+ },
+ {
+  "event_id": 470,
+  "doc_id": 1611,
+  "start_sent_idx": 1,
+  "end_sent_idx": 1,
+  "argument": ""
+ },
+ {
+  "event_id": 470,
+  "doc_id": 1611,
+  "start_sent_idx": 2,
+  "end_sent_idx": 2,
+  "argument": ""
+ },
+ {
+  "event_id": 470,
+  "doc_id": 1611,
+  "start_sent_idx": 3,
+  "end_sent_idx": 3,
+  "argument": ""
+ },
+ {
+  "event_id": 470,
+  "doc_id": 1611,
+  "start_sent_idx": 4,
+  "end_sent_idx": 4,
+  "argument": ""
+ },
+ {
+  "event_id": 470,
+  "doc_id": 1611,
+  "start_sent_idx": 5,
+  "end_sent_idx": 5,
+  "argument": ""
+ },
+ {
+  "event_id": 470,
+  "doc_id": 1611,
+  "start_sent_idx": 6,
+  "end_sent_idx": 6,
+  "argument": ""
+ },
+ {
+  "event_id": 524,
+  "doc_id": 1818,
+  "start_sent_idx": 0,
+  "end_sent_idx": 1,
+  "argument": ""
+ },
+ {
+  "event_id": 524,
+  "doc_id": 1818,
+  "start_sent_idx": 2,
+  "end_sent_idx": 2,
+  "argument": ""
+ },
+ {
+  "event_id": 524,
+  "doc_id": 1818,
+  "start_sent_idx": 3,
+  "end_sent_idx": 9,
+  "argument": ""
+ }
+]
