@@ -1,0 +1,10 @@
+├─chinese_pretrain_mrc_roberta_wwm_ext_large
+│      config.json
+│      pytorch_model.bin
+│      tokenizer.json
+│      vocab.txt
+│      
+└─ltp
+    └─base
+            ltp.model
+            vocab.txt
