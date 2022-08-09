@@ -6,5 +6,6 @@ pandas
 tqdm
 jieba
 termcolor
+protobuf==3.19.0
 ltp
 SentencePiece
