@@ -94,7 +94,7 @@ If unable to auto download, you need to search and download these pretrained mod
 - ltp base (word segment model)
 
 #### Step 1: Event-Oriented Opinion Extraction
- (Train and Test) Predict test file during train, and results will be savedd at model_combine/task1_combine_data/
+ (Train and Test) Predict test file during train, and results will be saved at model_combine/task1_combine_data/
 
 - seq_base (3 models, including 0 cross valid)
 
@@ -146,7 +146,7 @@ python eoe_model/seq_base/main.py \
     --result_dir model_combine/task1_combine_data/
 ```
 
-- attention_base (3 models, including 3 cross valid)
+- attention_base (3 models, including 3 Cross-validation)
 ```python
 python eoe_model/attention_base/main.py \
        --hidden_dim 768 \
@@ -192,7 +192,7 @@ python eoe_model/attention_base/main.py \
 
 ####  Step 2: Opinion Target Extraction
 (Train) Predict dev file rather than test file
-- mrc (4 models, including 1 cross valid)
+- mrc (4 models, including 1 Cross-validation)
 ```python
 python ote_model/mrc/main.py \
     --word_seg_model jieba \
@@ -325,7 +325,7 @@ python arg_padding.py \
     --output_file data/ECOB-ZH/test.ann.json
 ```
 ####  Step 3: mrc test (4 times)
-File will be save at model_combine/task2_combine_data/
+File will be saved at model_combine/task2_combine_data/
 ```python
 python ote_model/mrc/main.py \
     --result_file mrc_jieba_train_accum3_epoch6_best.ann.json \
